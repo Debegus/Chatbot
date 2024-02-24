@@ -24,7 +24,7 @@ def comunicate():
 st.title("Desarrolador AI")
 st.write("Utilizando la API chatGPT, este chatbot ofrece capacidades conversacionales avanzadas.")
 
-user_input = st.text_input("Por favor ingrese unmensaje aquí", key = "user_input", on_change = comunicate)
+user_input = st.text_input("Por favor ingrese un mensaje aquí", key = "user_input", on_change = comunicate)
 
 if st.session_state["messages"]:
   messages = st.session_state["messages"]
