@@ -8,21 +8,21 @@ if "messages" not in st.session_state:
 
 def comunicate():
   messages = st.session_state["messages"]
-  user_message = {"role":"user","content": st.session_state["user_input"]}
+  user_message = {"role":"user","content":st.session_state["user input"]}
   messages.append(user_message)
 
-  response = client.chat.completions.create(
+  response = cliente.chat.completions.create(
     model="gpt-3.5-turbo",
     messages = messages
   )
-  
+ 
   bot_message = response.choices[0].messages
   messages.append(bot_message)
 
   st.session_state["user_input"] = ""
 
-st.title("Desarrollador AI")
-st.image("chaqueton.png",width=100)
+st.title("Desarrolador AI")
+st.image("chaqueton.png","auto")
 st.write("Utilizando la API chatGPT, este chatbot ofrece capacidades conversacionales avanzadas.")
 
 user_input = st.text_input("Por favor ingrese un mensaje aquí", key = "user_input", on_change = comunicate)
